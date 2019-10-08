@@ -1,0 +1,64 @@
+.main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30vw;
+    height: 30vh;
+    min-height: 30rem;
+    min-width: 30rem;
+    color: $color-grey-light-one;
+    font-size: 2em;
+    font-family: sans-serif;
+    text-align: center;
+    background-color: rgba($color-grey-dark-2, .7);
+    box-shadow: 1rem .5rem 1rem rgba($color-black, .2);
+    border-radius: 2rem;
+    padding: 1rem;
+
+    @media screen and (max-width: 1150px) { 
+        min-height: 40rem;
+        height: 40vh;
+    }
+
+    &__header {
+        margin-bottom: 1rem;
+        color: $color-grey-light-one;
+        height: 30%;
+
+        &--name {
+            color: $color-black;
+        }
+    }
+
+    &__options {
+        height: 70%;
+
+        &--description {
+            height: 55%;
+        }
+
+        &__btn-block {
+            display: flex;
+            justify-content: space-around;
+
+            &--view, &--edit {
+                background-color: $color-primary-light;
+                box-shadow: .5rem .3rem 1rem rgba($color-black, .2);
+            }
+        }
+
+        
+        &::before {
+            content: ' ';
+            display: inline-block;
+            height: 1px;
+            width: 100%;
+            background-color: white;
+        }
+    }
+
+}

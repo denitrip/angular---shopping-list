@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/styles/__variables.scss';
+@import './assets/styles/__base.scss';
+@import './assets/styles/__common.scss';
+
+@import './app/components/welcome-page/welcome-page.component.scss';
+@import './app/components/view-page/view-page.component.scss';
+@import './app/components/add-page/add-page.component.scss';
+@import './app/components/shopping-item/shopping-item.component.scss';
+@import './app/components/shopping-list-menu/shopping-list-menu-item.component.scss';
+@import './app/components/app-menu/app-menu.component.scss';
+@import './app/app.component.scss';
+
+
+//styles for angular notifier
+@import '../node_modules/angular-notifier/styles/core.scss';
+@import '../node_modules/angular-notifier/styles/themes/theme-material.scss';
+@import '../node_modules/angular-notifier/styles/types/type-default.scss';
+@import '../node_modules/angular-notifier/styles/types/type-success.scss';
+@import '../node_modules/angular-notifier/styles/types/type-error.scss';
+@import '../node_modules/angular-notifier/styles/types/type-warning.scss';

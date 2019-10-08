@@ -1,0 +1,53 @@
+<section class="form-section">
+    <div class="component-form">
+        <h1 class="component-form__header">
+            Add item to shopping list
+        </h1>
+        <div class="component-form__container" 
+        [formGroup]="shoppingItemForm"
+        >
+            <div class="component-form__container__row">
+                <label mwRequired class="component-form__container__row--label">Title</label>
+                <input class="component-form__container__row--title" formControlName="name"/>
+            </div>
+            <div class="component-form__container__row">
+                <label mwRequired class="component-form__container__row--label">Price</label>
+                <input class="component-form__container__row--price" formControlName="cost"/>
+            </div>
+            <div class="component-form__container__row">
+                <label mwRequired class="component-form__container__row--label">Amount</label>
+                <input class="component-form__container__row--amount" formControlName="amount"/>
+            </div>
+            <div class="component-form__container__row">
+                <label class="component-form__container__row--label">Comment</label>
+                <input class="component-form__container__row--comment" formControlName="comment"/>
+            </div>
+            <div class="component-form__container__row">
+                <button type="submit" [disabled]="!shoppingItemForm.valid" [ngClass]="{'disabled ': !shoppingItemForm.valid}" class="component-form__container__row--save-btn"
+                (click)="onSubmit()"
+                >
+                    Save
+                </button>
+                <button type="reset" class="component-form__container__row--clean-btn"
+                (click)="resetToInitialState()"
+                >
+                    Clean
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="component-form__error-row">
+        <span *ngIf="amount.invalid && amount.errors.bigNumber"
+        class="component-form__error-row--error">
+            Amount is too big.
+        </span>
+        <span *ngIf="amount.invalid && amount.errors.invalidNumber"
+        class="component-form__error-row--error">
+            Incorrect amount value.
+        </span>
+        <span *ngIf="cost.invalid && cost.errors.invalidNumber"
+        class="component-form__error-row--error">
+            Incorrect price value.
+        </span>
+    </div>
+</section>

@@ -1,0 +1,158 @@
+.form-section {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.component-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    height: 40vh;
+    box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    font-family: sans-serif;
+    background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 40%, rgba(0, 0, 0, 0) 50%), url(./assets/images/shopping-list.jpg);
+
+    @media screen and (max-width: 1400px) { 
+        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 35%, rgba(0, 0, 0, 0) 50%), url(./assets/images/shopping-list.jpg);
+    }
+
+    @media screen and (max-width: 1045px) { 
+        background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 100%, rgba(0, 0, 0, 0) 50%), url(./assets/images/shopping-list.jpg);
+    }
+
+    @media screen and (max-width: 850px) { 
+        height: 50vh;
+    }
+
+    @media screen and (max-width: 500px) { 
+        height: 53vh;
+    }
+
+    @media screen and (max-width: 400px) { 
+        height: 58vh;
+    }
+
+    &__header {
+        font-size: 2.5rem;
+        width: 100%;
+        padding: 2rem 0;
+        position: relative;
+        text-align: center;
+
+        &::before, &::after {
+            top: 50%;
+            content: '';
+            display: inline-block;
+            background-color: $color-black;
+            height: 2px;
+            width: 20%;
+
+            @media screen and (max-width: 1045px) { 
+                width: 10%;
+            }
+
+            @media screen and (max-width: 850px) { 
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 600px) { 
+            font-size: 2rem;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+        &__row {
+            display: flex;
+            width: 70%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            font-size: 2rem;
+
+            @media screen and (max-width: 1090px) { 
+                width: 90%;
+            }
+
+            &--save-btn {
+                background-color: $color-primary;
+            }
+
+            &--clean-btn {
+                background-color: $color-secondary-light;
+            }
+
+            & input {
+                border: none;
+                border-radius: 2rem;
+                padding: 1rem 4rem;
+                font-family: sans-serif;
+                font-size: 1.6rem;
+                line-height: .05;
+                font-weight: 600;
+                color: $color-grey-dark-3;
+
+                @media screen and (max-width: 1045px) { 
+                    border: 1px solid rgba($color-black, .2);
+                }
+
+                @media screen and (max-width: 850px) { 
+                    width: 100%;
+                }
+            }
+
+            & button {
+                border: none;
+                border-radius: 2rem;
+                padding: 1.5rem 4rem;
+                font-size: 2rem;
+                color: $color-grey-dark-3;
+
+                &:hover {
+
+                    &:not(.disabled) {
+                        transform: translateY(-3px);
+                        box-shadow: 0 1rem 2rem rgba($color-black, .2);
+                    }
+                }
+
+                @media screen and (max-width: 600px) { 
+                    padding: 1.5rem 2rem;
+                }
+
+                @media screen and (max-width: 400px) { 
+                    padding: 1.5rem 6rem;
+
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__error-row {
+        width: 50vw;
+
+        &--error {
+            display: inline-block;
+            font-size: 3rem;
+            font-family: sans-serif;
+            text-align: left;
+            color: $color-red;
+            margin: 1rem 0;
+        }
+    }
+}

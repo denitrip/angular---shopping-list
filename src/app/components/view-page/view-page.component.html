@@ -1,0 +1,17 @@
+<div class="shopping-list">
+    <div class="shopping-list__header">
+        <span class="shopping-list__header--text">
+            Shopping List
+        </span> 
+    </div>
+    <mw-menu-item
+        (onMenuItemSelected)="onMenuSelect($event)"
+        [menuItems]="menuItems"
+    ></mw-menu-item>
+    <div class="shopping-list__container">
+        <mw-shopping-item
+            *ngFor="let item of shoppingItems"
+            [shoppingItem]="item"
+        ></mw-shopping-item>
+    </div>
+</div>

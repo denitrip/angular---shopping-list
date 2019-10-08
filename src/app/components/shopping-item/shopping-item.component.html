@@ -1,0 +1,20 @@
+<div class="shopping-item">
+    <div class="shopping-item__header">
+        <div class="shopping-item__header--delete-btn" (click)="onDeleteItem()">
+            <img src="../../../assets/icons/icon-delete.png" alt="delete icon">
+        </div>
+        <span class="shopping-item__header--text">{{shoppingItem.name}}</span>
+    </div>
+    <div class="shopping-item__description">
+        <span class="shopping-item__description--cost">{{shoppingItem.cost}} $</span>
+        <span class="shopping-item__description--amount">{{shoppingItem.amount}}</span>
+        <span class="shopping-item__description--comment">{{shoppingItem.comment}}</span>
+    </div>
+    <div class="shopping-item__footer">
+        <div 
+            *ngIf="shoppingItem.status === 'active'"
+            class="shopping-item__footer--done" (click)="onCompleteItem()">
+            <img src="../../../assets/icons/icon-success.png" alt="done icon">
+        </div>
+    </div>
+</div>
