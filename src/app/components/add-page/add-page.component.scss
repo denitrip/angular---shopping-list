@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    height: 40vh;
+    height: 55vh;
     box-shadow: 0 1rem 2rem rgba($color-black, .2);
     font-family: sans-serif;
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 40%, rgba(0, 0, 0, 0) 50%), url(./assets/images/shopping-list.jpg);
@@ -25,15 +25,15 @@
     }
 
     @media screen and (max-width: 850px) { 
-        height: 50vh;
+        height: 70vh;
     }
 
     @media screen and (max-width: 500px) { 
-        height: 53vh;
+        height: 75vh;
     }
 
     @media screen and (max-width: 400px) { 
-        height: 58vh;
+        height: 80vh;
     }
 
     &__header {
