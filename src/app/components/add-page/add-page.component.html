@@ -38,16 +38,20 @@
     </div>
     <div class="component-form__error-row">
         <span *ngIf="amount.invalid && amount.errors.bigNumber"
-        class="component-form__error-row--error">
+            class="component-form__error-row--error">
             Amount is too big.
         </span>
         <span *ngIf="amount.invalid && amount.errors.invalidNumber"
-        class="component-form__error-row--error">
+            class="component-form__error-row--error">
             Incorrect amount value.
         </span>
         <span *ngIf="cost.invalid && cost.errors.invalidNumber"
-        class="component-form__error-row--error">
+            class="component-form__error-row--error">
             Incorrect price value.
         </span>
+        <span *ngIf="title.invalid && title.errors.tooLong"
+            class="component-form__error-row--error">
+            Too long title :)
+        </span>        
     </div>
 </section>

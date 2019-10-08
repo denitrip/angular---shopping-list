@@ -5,6 +5,7 @@ import { ShoppingItemService } from '../shopping-item/shopping-item.service';
 import { NotifierService } from 'angular-notifier';
 import { costValidator } from './validators/cost-validator';
 import { amountValidator } from './validators/amount-validator';
+import { titleValidator } from './validators/title-validator';
 
 @Component({
     selector: 'mw-add-page',
@@ -12,7 +13,7 @@ import { amountValidator } from './validators/amount-validator';
 })
 export class AddPageComponent{
     shoppingItemForm = new FormGroup({
-        name: new FormControl('', [Validators.required]),
+        name: new FormControl('', [Validators.required, titleValidator]),
         cost: new FormControl('', [Validators.required, costValidator]),
         amount: new FormControl('', [Validators.required, amountValidator]),
         comment: new FormControl('')
@@ -39,4 +40,7 @@ export class AddPageComponent{
         return this.shoppingItemForm.get('cost');
     }
 
+    get title() {
+        return this.shoppingItemForm.get('name');
+    }
 }
