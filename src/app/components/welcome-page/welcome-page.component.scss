@@ -46,7 +46,10 @@
             justify-content: space-around;
 
             &--view, &--edit {
-                background-color: $color-primary-light;
+                background-color: $color-grey-light-one;
+                color: $color-black;
+                font-family: sans-serif;
+                font-weight: 600;
                 box-shadow: .5rem .3rem 1rem rgba($color-black, .2);
             }
         }

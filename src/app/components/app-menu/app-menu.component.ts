@@ -7,20 +7,20 @@ import { Router, NavigationStart } from "@angular/router";
     templateUrl: './app-menu.component.html'
 })
 export class AppMenuComponent implements OnInit{ 
-    menuState;
-    currentRoute;
+    menuState: Boolean;
+    currentRoute: String;
+
+    constructor(private router:Router) {
+      this.router.events
+      .subscribe((event) => {
+        if (event instanceof NavigationStart) {
+          this.currentRoute = event.url;
+        }
+      })
+    }
 
     ngOnInit() {
       this.menuState = false;
-    }
-
-    constructor(private router:Router) {
-        this.router.events
-        .subscribe((event) => {
-          if (event instanceof NavigationStart) {
-            this.currentRoute = event.url;
-          }
-        })
     }
 
     onMenuItemSelect() {

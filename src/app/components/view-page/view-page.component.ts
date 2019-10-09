@@ -1,14 +1,20 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ShoppingItemService } from '../shopping-item/shopping-item.service';
+import { ShoppingItemService, shoppingItemInterface } from '../shopping-item/shopping-item.service';
+
+export interface menuItemInterface {
+    selected: Boolean;
+    readonly text: 'active' | 'completed';
+}
 
 @Component({
     selector: 'mw-view-page',
     templateUrl: './view-page.component.html'
 })
+
 export class ViewPageComponent implements OnInit { 
-    shoppingItems;
-    menuItems;
+    shoppingItems: Array<shoppingItemInterface>;
+    menuItems: Array<menuItemInterface>;
 
     constructor(private shoppingItemService: ShoppingItemService) {}
 
@@ -26,7 +32,7 @@ export class ViewPageComponent implements OnInit {
         ]
     }
 
-    onMenuSelect(menuItem) {
+    onMenuSelect(menuItem: menuItemInterface) {
         this.menuItems.forEach(e => {
             if (e === menuItem) {
                 e.selected = true;

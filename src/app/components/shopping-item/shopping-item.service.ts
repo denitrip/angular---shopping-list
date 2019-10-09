@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';;
 import { NotifierService } from 'angular-notifier';
 
+export interface shoppingItemInterface {
+    name: string,
+    cost: string,
+    amount: string,
+    status: string,
+    comment?: string
+}
+
 @Injectable({
     providedIn: 'root'
 })
-export class ShoppingItemService {
 
-    constructor(private notifierService: NotifierService) {}
-
+export class ShoppingItemService{
     shoppingItemsActive = [
         {
             name: 'Milk',
@@ -59,21 +65,25 @@ export class ShoppingItemService {
         }
     ]
 
-    getShoppingListItems(status) {
+    constructor(private notifierService: NotifierService) {}
+
+    getShoppingListItems(status: String) {
         return status === 'active' ? this.shoppingItemsActive : this.shoppingItemsCompleted;
     }
 
-    deleteActivePosition(item) {
+    deleteActivePosition(item: shoppingItemInterface, notNotify?: Boolean) {
         let editingShoppingList = item.status === 'active' ? this.shoppingItemsActive : this.shoppingItemsCompleted;
         const index = editingShoppingList.indexOf(item);
         if (index >= 0) {
             editingShoppingList.splice(index, 1);
         }
-        this.notifierService.notify('warning', 'Item has been removed');
+        if (!notNotify) {
+            this.notifierService.notify('warning', 'Item has been removed');
+        }
     }
 
     completePosition(item) {
-        this.deleteActivePosition(item);
+        this.deleteActivePosition(item, true);
         item.status = 'completed';
         this.shoppingItemsCompleted.push(item);
         this.notifierService.notify('success', 'Item has been moved to completed list');

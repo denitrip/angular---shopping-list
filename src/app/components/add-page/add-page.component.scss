@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     width: 50vw;
-    height: 55vh;
+    height: 37rem;
     box-shadow: 0 1rem 2rem rgba($color-black, .2);
     font-family: sans-serif;
     background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 40%, rgba(0, 0, 0, 0) 50%), url(./assets/images/shopping-list.jpg);
@@ -25,15 +25,15 @@
     }
 
     @media screen and (max-width: 850px) { 
-        height: 70vh;
+        height: 48rem;
     }
 
     @media screen and (max-width: 500px) { 
-        height: 75vh;
+        height: 53rem;;
     }
 
     @media screen and (max-width: 400px) { 
-        height: 80vh;
+        height: 58rem;
     }
 
     &__header {
@@ -147,7 +147,7 @@
         width: 50vw;
 
         &--error {
-            display: inline-block;
+            display: block;
             font-size: 3rem;
             font-family: sans-serif;
             text-align: left;
