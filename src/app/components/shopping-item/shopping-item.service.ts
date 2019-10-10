@@ -1,12 +1,17 @@
-import { Injectable } from '@angular/core';;
+import { Injectable } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
 
 export interface shoppingItemInterface {
     name: string,
     cost: string,
     amount: string,
-    status: string,
-    comment?: string
+    comment: string,
+    status: string
+}
+
+export interface itemsCount {
+    active: number, 
+    completed: number
 }
 
 @Injectable({
@@ -33,12 +38,14 @@ export class ShoppingItemService{
             name: 'Sugar',
             cost: '4',
             amount: '1 packet',
+            comment: '',
             status: "active"
         },
         {
             name: 'Chicken',
             cost: '10',
             amount: '1 only',
+            comment: '',
             status: "active"
         },
         {
@@ -52,6 +59,7 @@ export class ShoppingItemService{
             name: 'Salat',
             cost: '3',
             amount: '1 packet',
+            comment: '',
             status: "active"
         }
     ]
@@ -61,13 +69,19 @@ export class ShoppingItemService{
             name: 'Cherry',
             cost: '7',
             amount: '1 kilo',
+            comment: '',
             status: "completed"
         }
     ]
 
+    shoppingItemsNumber = {
+        active: this.shoppingItemsActive.length,
+        completed: this.shoppingItemsCompleted.length
+    }
+
     constructor(private notifierService: NotifierService) {}
 
-    getShoppingListItems(status: String) {
+    getShoppingListItems(status: String): Array<shoppingItemInterface> {
         return status === 'active' ? this.shoppingItemsActive : this.shoppingItemsCompleted;
     }
 
@@ -80,18 +94,30 @@ export class ShoppingItemService{
         if (!notNotify) {
             this.notifierService.notify('warning', 'Item has been removed');
         }
+        this.calculateItemsNumber();
     }
 
-    completePosition(item) {
+    getItemsCount(): itemsCount {
+        return this.shoppingItemsNumber;
+    }
+
+    completePosition(item: shoppingItemInterface) {
         this.deleteActivePosition(item, true);
         item.status = 'completed';
         this.shoppingItemsCompleted.push(item);
         this.notifierService.notify('success', 'Item has been moved to completed list');
+        this.calculateItemsNumber();
     }
 
-    addShoppingItem(item) {
+    addShoppingItem(item: shoppingItemInterface) {
         item.status = 'active'
         this.shoppingItemsActive.push(item);
-        this.notifierService.notify('success', 'Item has been added to active list')
+        this.notifierService.notify('success', 'Item has been added to active list');
+        this.calculateItemsNumber();
+    }
+
+    private calculateItemsNumber() {
+        this.shoppingItemsNumber.active = this.shoppingItemsActive.length;
+        this.shoppingItemsNumber.completed = this.shoppingItemsCompleted.length;
     }
 }

@@ -21,7 +21,31 @@
 
         &--text {
             display: inline-block;
+            position: relative;
+
+            @media screen and (max-width: 585px) { 
+                font-size: 2.2rem;
+            }
         }
+
+        &--count {
+            display: inline-block;
+            position: absolute;
+            top: -1rem;
+            right: -5rem;
+            background-color: $color-red;
+            border-radius: 50%;
+            padding: .5rem 1rem;
+            font-size: 2rem;
+            font-weight: 600;
+
+            @media screen and (max-width: 485px) { 
+                right: -2.5rem;
+                font-size: 1.5rem;
+                padding: .3rem .7rem;
+            }
+        }
+
         &:not(.menu-section--selected):hover {
             background-color: $color-grey-dark;
         }

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ShoppingItemService, shoppingItemInterface } from '../shopping-item/shopping-item.service';
+import { ShoppingItemService, shoppingItemInterface, itemsCount } from '../shopping-item/shopping-item.service';
 
 export interface menuItemInterface {
     selected: Boolean;
@@ -15,6 +15,7 @@ export interface menuItemInterface {
 export class ViewPageComponent implements OnInit { 
     shoppingItems: Array<shoppingItemInterface>;
     menuItems: Array<menuItemInterface>;
+    itemsNumber: itemsCount;
 
     constructor(private shoppingItemService: ShoppingItemService) {}
 
@@ -30,6 +31,7 @@ export class ViewPageComponent implements OnInit {
                 text: 'completed'
             }
         ]
+        this.itemsNumber = this.shoppingItemService.getItemsCount();
     }
 
     onMenuSelect(menuItem: menuItemInterface) {

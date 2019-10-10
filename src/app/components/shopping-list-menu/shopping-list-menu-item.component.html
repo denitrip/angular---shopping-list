@@ -3,8 +3,9 @@
     *ngFor="let item of menuItems"
     (click)="onSelected(item)"
     [ngClass]="{'menu-section--selected': item.selected}" class="menu-section__option"> 
-        <div class="meu-section__option--text">
+        <div class="menu-section__option--text">
             {{item.text}}
+            <span class="menu-section__option--count">{{itemsNumber[item.text]}}</span>
         </div>
     </div>
 </div>
