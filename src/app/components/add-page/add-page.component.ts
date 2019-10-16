@@ -17,7 +17,7 @@ export class AddPageComponent{
         cost: new FormControl('', [Validators.required, costValidator]),
         amount: new FormControl('', [Validators.required, amountValidator]),
         comment: new FormControl('')
-    });;
+    });
 
     constructor(private shoppingItemService: ShoppingItemService,
         private notifierService: NotifierService) {}

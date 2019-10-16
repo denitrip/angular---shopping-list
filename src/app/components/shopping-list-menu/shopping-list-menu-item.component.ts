@@ -1,7 +1,7 @@
 
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { menuItemInterface } from '../view-page/view-page.component';
-import { itemsCount } from '../shopping-item/shopping-item.service'
+import { itemsCount } from '../shopping-item/shopping-item.model'
 
 @Component({
     selector: 'mw-menu-item',

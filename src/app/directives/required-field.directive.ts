@@ -1,4 +1,4 @@
-import { Directive, HostBinding, Input, HostListener } from '@angular/core';
+import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
     selector: '[mwRequired]'

@@ -4,8 +4,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 import { ViewPageComponent } from './components/view-page/view-page.component';
 import { AddPageComponent } from './components/add-page/add-page.component'
 
-
-const routes: Routes = [
+export const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
   {path: 'welcome', component: WelcomePageComponent},
   {path: 'view', component: ViewPageComponent},

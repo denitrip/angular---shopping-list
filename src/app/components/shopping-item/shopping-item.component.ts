@@ -1,6 +1,7 @@
 
 import { Component, Input } from '@angular/core';
-import { ShoppingItemService, shoppingItemInterface } from './shopping-item.service';
+import { ShoppingItemService } from './shopping-item.service';
+import { shoppingItemInterface } from './shopping-item.model';
 
 @Component({
     selector: 'mw-shopping-item',

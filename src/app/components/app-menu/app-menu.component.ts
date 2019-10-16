@@ -15,6 +15,7 @@ export class AppMenuComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
       this.menuState = false;
+      //this.currentRoute = '';
       this.currentRouteObervable = this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {

@@ -1,18 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NotifierService } from 'angular-notifier';
-
-export interface shoppingItemInterface {
-    name: string,
-    cost: string,
-    amount: string,
-    comment: string,
-    status: string
-}
-
-export interface itemsCount {
-    active: number, 
-    completed: number
-}
+import { shoppingItemInterface, itemsCount } from './shopping-item.model';
 
 @Injectable({
     providedIn: 'root'

@@ -1,6 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ShoppingItemService, shoppingItemInterface, itemsCount } from '../shopping-item/shopping-item.service';
+import { ShoppingItemService } from '../shopping-item/shopping-item.service';
+import { shoppingItemInterface, itemsCount } from '../shopping-item/shopping-item.model';
 
 export interface menuItemInterface {
     selected: Boolean;
