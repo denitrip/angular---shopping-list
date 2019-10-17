@@ -2,13 +2,15 @@ import { ShoppingListMenuItemComponent } from './shopping-list-menu-item.compone
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 describe('ShoppingListMenuItemComponent', () => {
-    let fixture: ComponentFixture<ShoppingListMenuItemComponent>
+    let fixture: ComponentFixture<ShoppingListMenuItemComponent>;
+    let sut: ShoppingListMenuItemComponent;
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [ ShoppingListMenuItemComponent ]
         })
         fixture = TestBed.createComponent( ShoppingListMenuItemComponent );
+        sut = fixture.componentInstance;
     });
 
     describe('Test shopping-list-menu-item component', () => {

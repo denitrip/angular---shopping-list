@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { Router} from "@angular/router";
 import {Location} from "@angular/common";
-import { ComponentFixture, TestBed,} from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick,} from '@angular/core/testing';
 import { routes } from '../../app-routing.module';
 import { WelcomePageComponent } from '../welcome-page/welcome-page.component';
 import { ViewPageComponent } from '../view-page/view-page.component';
@@ -11,10 +11,8 @@ import { AddPageComponent } from '../add-page/add-page.component';
 import { ShoppingItemComponent } from '../shopping-item/shopping-item.component';
 import { ShoppingItemService } from '../shopping-item/shopping-item.service';
 import { ShoppingListMenuItemComponent } from '../shopping-list-menu/shopping-list-menu-item.component';
-import { ComponentFactoryResolver } from '@angular/core';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
 
-describe('ShoppingListMenuItemComponent', () => {
+describe('AppMenuComponent', () => {
     let sut: AppMenuComponent;
     let fixture: ComponentFixture<AppMenuComponent>;
     let router: Router;
@@ -64,5 +62,17 @@ describe('ShoppingListMenuItemComponent', () => {
             const selectedLink: HTMLAnchorElement = nativeElement.querySelector('.navigation__link--selected');
             expect(selectedLink.textContent).toBe('Add items');
         })
+        it('If currentRouter === /view -> location chages to /view', fakeAsync(() => {
+            fixture.detectChanges();
+            router.navigate(['/view']);
+            tick();
+            expect(location.path()).toBe('/view');
+        }))
+        it('If currentRouter === /add -> location chages to /add', fakeAsync(() => {
+            fixture.detectChanges();
+            router.navigate(['/add']);
+            tick();
+            expect(location.path()).toBe('/add');
+        }))
     })
 })
