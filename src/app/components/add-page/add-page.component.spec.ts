@@ -163,7 +163,7 @@ describe('AppMenuComponent', () => {
             const resetButton: HTMLButtonElement = nativeElement.querySelector('.component-form__container__row--clean-btn');
             resetButton.click();
             fixture.detectChanges();
-            expect(sut.shoppingItemForm.value.price).toEqual(null);
+            expect(sut.shoppingItemForm.value.cost).toEqual(null);
         })
         it('form reset clears name', () => {
             fixture.detectChanges();
