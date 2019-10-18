@@ -13,7 +13,7 @@ import { ShoppingItemService } from '../shopping-item/shopping-item.service';
 import { ShoppingListMenuItemComponent } from '../shopping-list-menu/shopping-list-menu-item.component';
 import { NotifierModule } from 'angular-notifier';
 
-describe('AppMenuComponent', () => {
+describe('ViewPageComponent', () => {
     let sut: ViewPageComponent;
     let fixture: ComponentFixture<ViewPageComponent>;
     let router: Router;

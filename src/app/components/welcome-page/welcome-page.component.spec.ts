@@ -12,7 +12,7 @@ import { ShoppingItemComponent } from '../shopping-item/shopping-item.component'
 import { ShoppingItemService } from '../shopping-item/shopping-item.service';
 import { ShoppingListMenuItemComponent } from '../shopping-list-menu/shopping-list-menu-item.component';
 
-describe('AppMenuComponent', () => {
+describe('WelcomePageComponent', () => {
     let sut: WelcomePageComponent;
     let fixture: ComponentFixture<WelcomePageComponent>;
     let router: Router;
