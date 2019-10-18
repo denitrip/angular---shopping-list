@@ -122,5 +122,84 @@ describe('AppMenuComponent', () => {
             fixture.detectChanges();
             expect(initialNumberOfItems).toBe(sut.shoppingItems.length);
         })
+        it('After clicking on delete active item button - active item counter decrements', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const initialNumberOfItems = sut.itemsNumber.active;
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__header--delete-btn');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBeGreaterThan(sut.itemsNumber.active);
+        })
+        it('After clicking on delete active item button - completed item counter do not changes', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const initialNumberOfItems = sut.itemsNumber.completed;
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__header--delete-btn');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBe(sut.itemsNumber.completed);
+        })
+        it('After clicking on delete completed item button - completed item counter decrements', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const initialNumberOfItems = sut.itemsNumber.completed;
+            const menuButtons: NodeListOf<HTMLDivElement> = nativeElement.querySelectorAll('.menu-section__option');
+            menuButtons[1].click();
+            fixture.detectChanges();
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__header--delete-btn');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBeGreaterThan(sut.itemsNumber.completed);
+        })
+        it('After clicking on delete completed item button - active item counter do not changes', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const initialNumberOfItems = sut.itemsNumber.active;
+            const menuButtons: NodeListOf<HTMLDivElement> = nativeElement.querySelectorAll('.menu-section__option');
+            menuButtons[1].click();
+            fixture.detectChanges();
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__header--delete-btn');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBe(sut.itemsNumber.active);
+        })
+        it('After clicking on complete item button - active item counter decrements', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const menuButtons: NodeListOf<HTMLDivElement> = nativeElement.querySelectorAll('.menu-section__option');
+            menuButtons[1].click();
+            fixture.detectChanges();
+            const initialNumberOfItems = sut.itemsNumber.active;
+            menuButtons[0].click();
+            fixture.detectChanges();
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__footer--done');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBeGreaterThan(sut.itemsNumber.active);
+        })
+        it('After clicking on complete item button - completed item counter inrements', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const menuButtons: NodeListOf<HTMLDivElement> = nativeElement.querySelectorAll('.menu-section__option');
+            menuButtons[1].click();
+            fixture.detectChanges();
+            const initialNumberOfItems = sut.itemsNumber.completed;
+            menuButtons[0].click();
+            fixture.detectChanges();
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__footer--done');
+            completeButton.click();
+            fixture.detectChanges();
+            expect(initialNumberOfItems).toBeLessThan(sut.itemsNumber.completed);
+        })
+        it('Completed item button is not visible in completed items list', () => {
+            fixture.detectChanges();
+            const nativeElement: HTMLElement = fixture.nativeElement;
+            const menuButtons: NodeListOf<HTMLDivElement> = nativeElement.querySelectorAll('.menu-section__option');
+            menuButtons[1].click();
+            fixture.detectChanges();
+            const completeButton: HTMLDivElement = nativeElement.querySelector('.shopping-item__footer--done');
+            expect(completeButton).toBe(null);
+        })
     })
 }) 
