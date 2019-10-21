@@ -6,7 +6,7 @@
         <span class="shopping-item__header--text">{{shoppingItem.name}}</span>
     </div>
     <div class="shopping-item__description">
-        <span class="shopping-item__description--cost">{{shoppingItem.cost}} $</span>
+        <span class="shopping-item__description--cost">{{shoppingItem.cost | PriceCurrency}}</span>
         <span class="shopping-item__description--amount">{{shoppingItem.amount}}</span>
         <span class="shopping-item__description--comment">{{shoppingItem.comment}}</span>
     </div>

@@ -11,6 +11,7 @@ import { ShoppingItemComponent } from './components/shopping-item/shopping-item.
 import { ShoppingListMenuItemComponent } from './components/shopping-list-menu/shopping-list-menu-item.component';
 import { AppMenuComponent } from './components/app-menu/app-menu.component';
 import { RequiredDirective } from './directives/required-field.directive'
+import { PriceCurrencyPipe } from './components/shopping-item/pipes/price.pipe'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RequiredDirective } from './directives/required-field.directive'
     ShoppingItemComponent,
     ShoppingListMenuItemComponent,
     AppMenuComponent,
-    RequiredDirective
+    RequiredDirective,
+    PriceCurrencyPipe
   ],
   imports: [
     BrowserModule,
