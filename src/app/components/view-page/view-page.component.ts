@@ -13,7 +13,7 @@ export interface menuItemInterface {
     templateUrl: './view-page.component.html'
 })
 
-export class ViewPageComponent implements OnInit { 
+export class ViewPageComponent implements OnInit {
     shoppingItems: Array<shoppingItemInterface>;
     menuItems: Array<menuItemInterface>;
     itemsNumber: itemsCount;
@@ -31,18 +31,14 @@ export class ViewPageComponent implements OnInit {
                 selected: false,
                 text: 'completed'
             }
-        ]
+        ];
         this.itemsNumber = this.shoppingItemService.getItemsCount();
     }
 
     onMenuSelect(menuItem: menuItemInterface) {
         this.menuItems.forEach(e => {
-            if (e === menuItem) {
-                e.selected = true;
-            } else {
-                e.selected = false;
-            }
-        })
+            e.selected = e === menuItem;
+        });
         this.shoppingItems = this.shoppingItemService.getShoppingListItems(menuItem.text);
     }
 }
