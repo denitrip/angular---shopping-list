@@ -1,18 +1,18 @@
 <div class="shopping-list">
-    <div class="shopping-list__header">
+  <div class="shopping-list__header">
         <span class="shopping-list__header--text">
             Shopping List
-        </span> 
-    </div>
-    <mw-menu-item
-        (onMenuItemSelected)="onMenuSelect($event)"
-        [menuItems]="menuItems"
-        [itemsNumber]="itemsNumber"
-    ></mw-menu-item>
-    <div class="shopping-list__container">
-        <mw-shopping-item
-            *ngFor="let item of shoppingItems"
-            [shoppingItem]="item"
-        ></mw-shopping-item>
-    </div>
+        </span>
+  </div>
+  <app-menu-item
+    (onMenuItemSelected)="onMenuSelect($event)"
+    [menuItems]="menuItems"
+    [itemsNumber]="itemsNumber"
+  ></app-menu-item>
+  <div class="shopping-list__container">
+    <app-shopping-item
+      *ngFor="let item of shoppingItems"
+      [shoppingItem]="item"
+    ></app-shopping-item>
+  </div>
 </div>

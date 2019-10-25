@@ -1,7 +1,7 @@
 import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[mwRequired]'
+    selector: '[appRequired]'
 })
 
 export class RequiredDirective {

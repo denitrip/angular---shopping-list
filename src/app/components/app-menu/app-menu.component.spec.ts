@@ -3,7 +3,7 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {ComponentFixture, TestBed, fakeAsync, tick,} from '@angular/core/testing';
+import {ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {routes} from '../../app-routing.module';
 import {WelcomePageComponent} from '../welcome-page/welcome-page.component';
 import {ViewPageComponent} from '../view-page/view-page.component';

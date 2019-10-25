@@ -43,7 +43,7 @@ describe('ViewPageComponent', () => {
     it('Component renders shopping items', () => {
       fixture.detectChanges();
       const nativeElement: HTMLElement = fixture.nativeElement;
-      const items: NodeListOf<any> = nativeElement.querySelectorAll('mw-shopping-item');
+      const items: NodeListOf<any> = nativeElement.querySelectorAll('app-shopping-item');
       expect(items.length).toBeGreaterThan(1);
     });
     it('Component renders view page menu', () => {

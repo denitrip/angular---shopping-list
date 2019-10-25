@@ -1,9 +1,9 @@
-import { Pipe } from '@angular/core';
+import {Pipe} from '@angular/core';
 
-@Pipe({ name: 'PriceCurrency' })
+@Pipe({name: 'PriceCurrency'})
 
 export class PriceCurrencyPipe {
-    transform(value: number): string {
-        return `${value} $`
-    }
+  transform(value: string): string {
+    return `${value} $`;
+  }
 }

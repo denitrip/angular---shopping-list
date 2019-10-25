@@ -1,10 +1,9 @@
-
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-    selector: 'mw-welcome-page',
-    templateUrl: './welcome-page.component.html'
+  selector: 'app-welcome-page',
+  templateUrl: './welcome-page.component.html'
 })
-export class WelcomePageComponent { 
-    
+export class WelcomePageComponent {
+
 }

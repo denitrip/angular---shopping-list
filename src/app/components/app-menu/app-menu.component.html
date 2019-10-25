@@ -1,17 +1,19 @@
-<div 
-    *ngIf="currentRoute !== '/welcome'"
-    class="navigation">
-    <input type="checkbox" class="navigation__checkbox" id="navi-toggle" name="menu" [(ngModel)]="menuState"/>
-    <label for="navi-toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
-    <div class="navigation__background">&nbsp;</div>
-    <nav class="navigation__nav">
-          <ul class="navigation__list" (click)="onMenuItemSelect($event)">
-            <li class="navigation__item">
-                <a [routerLink]="['/view']" [ngClass]="{'navigation__link--selected': currentRoute === '/view'}" class="navigation__link">View list</a>
-            </li>
-            <li class="navigation__item">
-                <a [routerLink]="['/add']" [ngClass]="{'navigation__link--selected': currentRoute === '/add'}" class="navigation__link">Add items</a>
-            </li>
-        </ul>
-    </nav>
+<div
+  *ngIf="currentRoute !== '/welcome'"
+  class="navigation">
+  <input type="checkbox" class="navigation__checkbox" id="navi-toggle" name="menu" [(ngModel)]="menuState"/>
+  <label for="navi-toggle" class="navigation__button"><span class="navigation__icon">&nbsp;</span></label>
+  <div class="navigation__background">&nbsp;</div>
+  <nav class="navigation__nav">
+    <ul class="navigation__list" (click)="onMenuItemSelect()">
+      <li class="navigation__item">
+        <a [routerLink]="['/view']" [ngClass]="{'navigation__link--selected': currentRoute === '/view'}"
+           class="navigation__link">View list</a>
+      </li>
+      <li class="navigation__item">
+        <a [routerLink]="['/add']" [ngClass]="{'navigation__link--selected': currentRoute === '/add'}"
+           class="navigation__link">Add items</a>
+      </li>
+    </ul>
+  </nav>
 </div>

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
-import { ViewPageComponent } from './components/view-page/view-page.component';
-import { AddPageComponent } from './components/add-page/add-page.component'
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {WelcomePageComponent} from './components/welcome-page/welcome-page.component';
+import {ViewPageComponent} from './components/view-page/view-page.component';
+import {AddPageComponent} from './components/add-page/add-page.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'welcome', pathMatch: 'full'},
@@ -15,4 +15,6 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+
+export class AppRoutingModule {
+}

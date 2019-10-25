@@ -1,83 +1,83 @@
 .shopping-item {
-    font-family: sans-serif;
-    font-weight: 400;
-    height: 30vh;
-    width: 20vw;
-    min-width: 30rem;
-    background-color: $color-tertiary-dark;
-    box-shadow: .5rem .3rem 1rem rgba($color-black, .2);
-    border-radius: 5rem;
+  font-family: sans-serif;
+  font-weight: 400;
+  height: 30vh;
+  width: 20vw;
+  min-width: 30rem;
+  background-color: $color-tertiary-dark;
+  box-shadow: .5rem .3rem 1rem rgba($color-black, .2);
+  border-radius: 5rem;
 
-    &__header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30%;
-        position: relative;
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    position: relative;
 
-        &--text {
-            display: inline-block;
-            font-size: 4rem;
-            color: $color-white;
-        }
-
-        &--delete-btn {
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-
-            img {
-                width: 3rem;
-            }
-
-            img:hover {
-                transition: all .2s;
-                transform: scale(1.3);
-            }
-        }
+    &--text {
+      display: inline-block;
+      font-size: 4rem;
+      color: $color-white;
     }
 
-    &__description {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 55%;
+    &--delete-btn {
+      position: absolute;
+      right: 1.5rem;
+      top: 1.5rem;
 
-        & > * {
-            display: inline-block;
-        }
+      img {
+        width: 3rem;
+      }
 
-        &--cost {
-            font-size: 4rem;
-            flex: 0 0 30%;
-            color: $color-primary-dark;
-        }
+      img:hover {
+        transition: all .2s;
+        transform: scale(1.3);
+      }
+    }
+  }
 
-        &--amount {
-            font-size: 3rem;
-            flex: 1 0 25%;
-            color: $color-grey-light-two;
-        }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 55%;
 
-        &--comment {
-            font-size: 2.5rem;
-            flex: 1 0 45%;
-            color: $color-grey-light-two;
-        }
+    & > * {
+      display: inline-block;
     }
 
-    &__footer {
-        height: 15%;
-        position: relative;
-
-        &--done {
-            position: absolute;
-
-            img:hover{
-                transition: all .2s;
-                transform: scale(1.2);
-            }
-        }
+    &--cost {
+      font-size: 4rem;
+      flex: 0 0 30%;
+      color: $color-primary-dark;
     }
+
+    &--amount {
+      font-size: 3rem;
+      flex: 1 0 25%;
+      color: $color-grey-light-two;
+    }
+
+    &--comment {
+      font-size: 2.5rem;
+      flex: 1 0 45%;
+      color: $color-grey-light-two;
+    }
+  }
+
+  &__footer {
+    height: 15%;
+    position: relative;
+
+    &--done {
+      position: absolute;
+
+      img:hover {
+        transition: all .2s;
+        transform: scale(1.2);
+      }
+    }
+  }
 }
