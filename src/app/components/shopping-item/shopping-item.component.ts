@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ShoppingItemService} from './shopping-item.service';
-import {ShoppingItemInterface} from './shopping-item.model';
+import {ShoppingItemInterface} from '../../reducers/shoppingItems/shopping-item.model';
 
 @Component({
   selector: 'app-shopping-item',

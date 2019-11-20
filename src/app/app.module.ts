@@ -12,6 +12,9 @@ import {ShoppingListMenuItemComponent} from './components/shopping-list-menu/sho
 import {AppMenuComponent} from './components/app-menu/app-menu.component';
 import {RequiredDirective} from './directives/required-field.directive';
 import {PriceCurrencyPipe} from './components/shopping-item/pipes/price.pipe';
+import {ShoppingItemsPipe} from './components/view-page/pipes/shopping-items.pipe';
+import {StoreModule} from '@ngrx/store';
+import {reducers, metaReducers} from './reducers';
 
 @NgModule({
   declarations: [
@@ -23,14 +26,22 @@ import {PriceCurrencyPipe} from './components/shopping-item/pipes/price.pipe';
     ShoppingListMenuItemComponent,
     AppMenuComponent,
     RequiredDirective,
-    PriceCurrencyPipe
+    PriceCurrencyPipe,
+    ShoppingItemsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NotifierModule
+    NotifierModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers,
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

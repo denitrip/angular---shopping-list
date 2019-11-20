@@ -12,6 +12,8 @@ import {ShoppingItemComponent} from '../shopping-item/shopping-item.component';
 import {ShoppingItemService} from '../shopping-item/shopping-item.service';
 import {ShoppingListMenuItemComponent} from '../shopping-list-menu/shopping-list-menu-item.component';
 import {PriceCurrencyPipe} from '../shopping-item/pipes/price.pipe';
+import {ShoppingItemsPipe} from '../view-page/pipes/shopping-items.pipe';
+import {Store} from '@ngrx/store';
 
 describe('AppMenuComponent', () => {
   let sut: AppMenuComponent;
@@ -23,8 +25,8 @@ describe('AppMenuComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(routes), FormsModule, ReactiveFormsModule],
       declarations: [AppMenuComponent, WelcomePageComponent, ViewPageComponent, AddPageComponent, ShoppingItemComponent,
-        ShoppingListMenuItemComponent, PriceCurrencyPipe],
-      providers: [ShoppingItemService]
+        ShoppingListMenuItemComponent, PriceCurrencyPipe, ShoppingItemsPipe],
+      providers: [ShoppingItemService, Store]
     });
     router = TestBed.get(Router);
     location = TestBed.get(Location);

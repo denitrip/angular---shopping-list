@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ShoppingItemService} from '../shopping-item/shopping-item.service';
-import {ShoppingItemInterface, ItemsCount} from '../shopping-item/shopping-item.model';
+import {ShoppingItemInterface, ItemsCount} from '../../reducers/shoppingItems/shopping-item.model';
+import {Store} from '@ngrx/store';
+import {State} from '../../reducers';
 
 export interface MenuItemInterface {
   selected: boolean;
@@ -15,13 +17,21 @@ export interface MenuItemInterface {
 export class ViewPageComponent implements OnInit {
   shoppingItems: Array<ShoppingItemInterface>;
   menuItems: Array<MenuItemInterface>;
+  menuState: string;
   itemsNumber: ItemsCount;
 
-  constructor(private shoppingItemService: ShoppingItemService) {
+  constructor(private shoppingItemService: ShoppingItemService, private store: Store<State>) {
+                store.select(state => state.shoppingItems).subscribe(items => {
+                this.shoppingItems = items ? items.shoppingItems : [];
+                this.itemsNumber = {
+                  active: items ? items.shoppingItems.filter(el => el.status === 'active').length : 0,
+                  completed: items ? items.shoppingItems.filter(el => el.status === 'completed').length : 0
+                };
+              });
   }
 
   ngOnInit() {
-    this.shoppingItems = this.shoppingItemService.getShoppingListItems('active');
+    this.menuState = 'active';
     this.menuItems = [
       {
         selected: true,
@@ -32,13 +42,12 @@ export class ViewPageComponent implements OnInit {
         text: 'completed'
       }
     ];
-    this.itemsNumber = this.shoppingItemService.getItemsCount();
   }
 
   onMenuSelect(menuItem: MenuItemInterface) {
+    this.menuState = menuItem.text;
     this.menuItems.forEach(e => {
       e.selected = e === menuItem;
     });
-    this.shoppingItems = this.shoppingItemService.getShoppingListItems(menuItem.text);
   }
 }

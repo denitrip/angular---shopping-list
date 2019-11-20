@@ -1,6 +1,6 @@
 import {Component, Input, EventEmitter, Output} from '@angular/core';
 import {MenuItemInterface} from '../view-page/view-page.component';
-import {ItemsCount} from '../shopping-item/shopping-item.model';
+import {ItemsCount} from '../../reducers/shoppingItems/shopping-item.model';
 
 @Component({
   selector: 'app-menu-item',

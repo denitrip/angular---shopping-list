@@ -11,7 +11,7 @@
   ></app-menu-item>
   <div class="shopping-list__container">
     <app-shopping-item
-      *ngFor="let item of shoppingItems"
+      *ngFor="let item of shoppingItems | ShoppingItemsFilter:menuState"
       [shoppingItem]="item"
     ></app-shopping-item>
   </div>

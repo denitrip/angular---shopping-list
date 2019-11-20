@@ -12,6 +12,7 @@ import {ShoppingItemComponent} from '../shopping-item/shopping-item.component';
 import {ShoppingItemService} from '../shopping-item/shopping-item.service';
 import {ShoppingListMenuItemComponent} from '../shopping-list-menu/shopping-list-menu-item.component';
 import {PriceCurrencyPipe} from '../shopping-item/pipes/price.pipe';
+import {ShoppingItemsPipe} from '../view-page/pipes/shopping-items.pipe'
 
 describe('WelcomePageComponent', () => {
   let sut: WelcomePageComponent;
@@ -23,7 +24,7 @@ describe('WelcomePageComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(routes), FormsModule, ReactiveFormsModule],
       declarations: [AppMenuComponent, WelcomePageComponent, ViewPageComponent, AddPageComponent, ShoppingItemComponent,
-        ShoppingListMenuItemComponent, PriceCurrencyPipe],
+        ShoppingListMenuItemComponent, PriceCurrencyPipe, ShoppingItemsPipe],
       providers: [ShoppingItemService]
     });
     router = TestBed.get(Router);
