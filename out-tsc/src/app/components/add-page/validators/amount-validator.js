@@ -1,0 +1,7 @@
+export function amountValidator(control) {
+    const valid = control.value ? control.value.replace(/[0-9]/gi, '') : '';
+    return valid
+        ? { invalidNumber: { valid: false, value: control.value } }
+        : !valid && control.value > 99999 ? { bigNumber: { valid: false, value: control.value } } : null;
+}
+//# sourceMappingURL=amount-validator.js.map
